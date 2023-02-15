@@ -10,19 +10,19 @@
           "subTasks": [
             {
               "Title": "Core1",
-              "isCompleted": false
+              "isCompleted": true
             },
             {
               "Title": "Core2",
-              "isCompleted": false
+              "isCompleted": true
             },
             {
               "Title": "Core3",
-              "isCompleted": false
+              "isCompleted": true
             },
             {
               "Title": "Core4",
-              "isCompleted": false
+              "isCompleted": true
             }
           ]
         },
@@ -32,15 +32,15 @@
           "subTasks": [
             {
               "Title": "Ext 1-1",
-              "isCompleted": false
+              "isCompleted": true
             },
             {
               "Title": "Ext 1-2",
-              "isCompleted": false
+              "isCompleted": true
             },
             {
               "Title": "Ext 1-3",
-              "isCompleted": false
+              "isCompleted": true
             }
           ]
         }

@@ -11,12 +11,34 @@ const ViewGoal = () => {
     useEffect(() => {
         const getData = async () => {
             const data = await fetch(`http://localhost:3000/Tasks/${id}`).then(res=>res.json())
-            console.log(data)
             setGoal(data)
             setLoading(false)
         }
         getData()
     },[id])
+
+    const updateDB = () => {
+        const body = goal
+        const options = {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        }
+        fetch(`http://localhost:3000/Tasks/${id}`, options)
+            .then(res=>res.json())
+            .then(data=>console.log(data))
+    }
+
+    const completeTask = (task, index, subIndex) => {
+        task.isCompleted = !task.isCompleted
+
+        const updatedGoal = {...goal}
+        updatedGoal.Tasks[index].subTasks.splice(subIndex, 1, task)
+        setGoal(updatedGoal)
+        updateDB()
+    }
 
     return (
         <>
@@ -28,12 +50,12 @@ const ViewGoal = () => {
                 <h3>{goal.Title}</h3>
                 <hr />
                 <ul>
-                    {goal.Tasks.map((task, index) => (
+                    {goal.Tasks?.map((task, index) => (
                         <li key={index} >
-                            <h4>{task.Title}</h4>
+                            <h4 className='taskTitle'>{task.Title}</h4>
                             <ul>
-                                {task.subTasks?.map((subTask, index) => (
-                                    <li key={index}>{subTask.Title}</li>
+                                {task.subTasks?.map((subTask, subIndex) => (
+                                    <li key={subIndex} className={subTask.isCompleted ? 'subTaskTitle completed' : 'subTaskTitle'} onClick={(e)=>completeTask(subTask, index, subIndex)}>{subTask.Title}</li>
                                 ))}
                             </ul>
                             <hr />
