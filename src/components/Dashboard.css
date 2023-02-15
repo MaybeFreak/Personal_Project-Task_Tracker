@@ -1,0 +1,13 @@
+main {
+    margin-top: 2rem;
+}
+
+main h2 {
+    text-align: center;
+    margin: 1rem;
+}
+
+section.goalsList {
+    display: grid;
+    grid-template-columns: 1fr 600px 1fr;
+}

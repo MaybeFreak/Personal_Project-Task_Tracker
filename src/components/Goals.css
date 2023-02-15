@@ -1,0 +1,29 @@
+.goalsList .goals {
+    grid-column: 2;
+}
+
+.goalsList .goals ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.goalsList .goals li {
+    background-color: #222;
+    border-radius: 15px;
+    font-size: 2rem;
+
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+
+    transition: all .5s;
+}
+
+.goalsList .goals li:hover {
+    background-color: #282828;
+    transform: scale(1.05);
+}
+
+.goalsList .goals a {
+    display: block;
+    padding: 3rem;
+}

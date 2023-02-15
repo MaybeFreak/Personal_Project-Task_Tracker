@@ -1,0 +1,37 @@
+.goalSection {
+    display: grid;
+    grid-template-columns: 1fr 600px 1fr;
+    
+    margin-top: 4rem;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding-left: 1rem;
+}
+
+.goalCard {
+    grid-column: 2;
+
+    padding: 2rem;
+    background-color: #222;
+    border-radius: 15px;
+    
+}
+
+.goalCard h3 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.goalCard hr {
+    margin: 1rem 0;
+    border: solid 2px #181818;
+}
+
+.goalCard h4 {
+    font-size: 1.5rem;
+}

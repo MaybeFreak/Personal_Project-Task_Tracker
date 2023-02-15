@@ -1,0 +1,45 @@
+html {
+  color-scheme: dark !important;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+button {
+  color: black;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 1rem;
+
+  background-color: #080808;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header nav {
+  margin-left: auto;
+  margin-right: 4rem;
+}
+
+header nav ul li {
+  background-color: #222;
+  border-radius: 10px;
+  padding: .5rem 1rem;
+  font-size: 1.5rem;
+  
+  transition: all .5s;
+}
+
+header nav ul li:hover {
+  background-color: #282828;
+  transform: scale(1.03);
+}
