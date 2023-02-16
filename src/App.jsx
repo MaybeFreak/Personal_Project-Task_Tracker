@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react'
 import Dashboard from './components/Dashboard'
 import ViewGoal from './components/ViewGoal'
 import CreatePage from './components/CreatePage'
+import EditPage from './components/EditPage'
 
 function App() {
 
   const [tasks, updateTasks] = useState([])
 
   const getGoals = () =>{
-    console.log('Updating Tasks')
     fetch(`http://localhost:3000/Tasks`)
       .then(res=>res.json())
       .then(data=>updateTasks(data))
@@ -37,6 +37,7 @@ function App() {
       <Routes >
         <Route path='/' element={<Dashboard tasks={tasks} />} />
         <Route path='/goal/:id' element={<ViewGoal />} />
+        <Route path='/goal/:id/edit' element={<EditPage />} />
         <Route path='/create' element={<CreatePage getGoals={getGoals}/>} />
       </Routes>
     </>

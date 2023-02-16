@@ -1,6 +1,6 @@
 import './ViewGoal.css'
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 const ViewGoal = () => {
 
@@ -15,7 +15,7 @@ const ViewGoal = () => {
             setLoading(false)
         }
         getData()
-    },[id])
+    },[])
 
     const updateDB = () => {
         const body = goal
@@ -75,6 +75,7 @@ const ViewGoal = () => {
                     ))}
                 </ul>
             </div>
+            <Link to={`/goal/${id}/edit`}>Edit</Link>
         </section>)
         }
         </>
