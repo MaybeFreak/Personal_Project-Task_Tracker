@@ -36,6 +36,18 @@ const ViewGoal = () => {
 
         const updatedGoal = {...goal}
         updatedGoal.Tasks[index].subTasks.splice(subIndex, 1, task)
+
+        let subTasksCompleted = true
+        updatedGoal.Tasks[index].subTasks.forEach((subTask) => {
+            subTask.isCompleted ? null : subTasksCompleted = false
+        })
+
+        if(subTasksCompleted) {
+            updatedGoal.Tasks[index].isCompleted = true
+        } else {
+            updatedGoal.Tasks[index].isCompleted = false
+        }
+
         setGoal(updatedGoal)
         updateDB()
     }
@@ -52,7 +64,7 @@ const ViewGoal = () => {
                 <ul>
                     {goal.Tasks?.map((task, index) => (
                         <li key={index} >
-                            <h4 className='taskTitle'>{task.Title}</h4>
+                            <h4 className='taskTitle'>{task.Title} {task.isCompleted ? <span className='checkmark'>&#10003;</span> : null}</h4>
                             <ul>
                                 {task.subTasks?.map((subTask, subIndex) => (
                                     <li key={subIndex} className={subTask.isCompleted ? 'subTaskTitle completed' : 'subTaskTitle'} onClick={(e)=>completeTask(subTask, index, subIndex)}>{subTask.Title}</li>
