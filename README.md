@@ -1,5 +1,7 @@
 # Task Tracker
 
+<img src="https://cdn.discordapp.com/attachments/142745451207065600/1111636383841402890/image.png" />
+
 ### Overview
 This is my take on a simple to-do list, the main difference is that it is meant to help you split bigger problems 'Goals' into smaller 
 more achievable 'Tasks' which then can be broken down into even smaller 'subtasks'. 
